@@ -28,58 +28,42 @@ module Ronin
   module UI
     module CommandLine
       module Commands
-        class Add < Command
+        class Update < Command
 
           def initialize(name)
             @cache = nil
-            @media = nil
-            @uri = nil
+            @verbose = false
 
             super(name)
           end
 
           def define_options(opts)
-            opts.usage = 'PATH [options]'
+            opts.usage = '[NAME ...] [options]'
 
             opts.options do
               opts.on('-C','--cache DIR','Specify an alternate overlay cache') do |dir|
                 @cache = dir
               end
 
-              opts.on('-m','--media MEDIA','Spedify the media-type of the overlay') do |media|
-                @media = media
-              end
-
-              opts.on('-U','--uri URI','Specify the source URI of the overlay') do |uri|
-                @uri = uri
-              end
-
-              opts.on('-L','--local','Similiar to: --media local') do
-                @media = :local
+              opts.on('-v','--verbose','Enable verbose output') do
+                @verbose = true
               end
             end
 
             opts.arguments(
-              'PATH' => 'Add the overlay located at the specified PATH'
+              'NAME' => 'The overlay to update'
             )
 
-            opts.summary('Add a local overlay located at the specified PATH to the Overlay cache')
+            opts.summary('Updates all or the specified repositories')
           end
 
           def arguments(*args)
-            unless args.length == 1
-              fail('only one overlay path maybe specified')
-            end
-
             Platform.load_overlays(@cache) if @cache
 
-            overlay_options = {:path => path.first}
-
-            overlay_options[:media] = @media if @media
-            overlay_options[:uri] = @uri if @uri
-
-            Platform.add(overlay_options) do |overlay|
-              puts "Overlay #{overlay.name.dump} added."
+            if args.empty?
+              Platform.overlays.each_overlay { |overlay| overlay.update }
+            else
+              args.each { |name| Platform.overlays.update(name) }
             end
           end
 
