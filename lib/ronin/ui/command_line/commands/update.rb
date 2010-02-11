@@ -27,10 +27,11 @@ module Ronin
       module Commands
         class Update < Command
 
-          desc "update [NAME]", "Update all Overlays or just a specified Overlay"
-          method_option :cache, :type => :string, :aliases => '-C'
+          desc 'Update all Overlays or just a specified Overlay'
+          class_option :cache, :type => :string, :aliases => '-C'
+          argument :name, :type => :string, :required => false
 
-          def default(name=nil)
+          def execute
             if options[:cache]
               Platform.load_overlays(options[:cache])
             end
