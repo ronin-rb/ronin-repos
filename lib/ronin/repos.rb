@@ -17,4 +17,4 @@
 # along with Ronin.  If not, see <https://www.gnu.org/licenses/>.
 #
 
-require 'ronin/script/script'
+require 'ronin/repos/version'
