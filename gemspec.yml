@@ -1,0 +1,28 @@
+name: ronin-repos
+summary: Installs and manages 3rd-party repositories for ronin
+description:
+  Allows installing and managing 3rd-party repositories of scripts, code,
+  or data.
+
+license: GPL-3.0
+authors: Postmodern
+email: postmodern.mod3@gmail.com
+homepage: https://ronin-rb.dev
+has_yard: true
+
+generated_files:
+ - man/ronin-install.1
+ - man/ronin-repos.1
+ - man/ronin-uninstall.1
+ - man/ronin-update.1
+
+required_ruby_version: ">= 1.9.1"
+
+dependencies:
+  # Library dependencies:
+  data_paths: ~> 0.3
+  pullr: ~> 0.1, >= 0.1.2
+
+development_dependencies:
+  bundler: ~> 2.0
+  yard: ~> 0.8
