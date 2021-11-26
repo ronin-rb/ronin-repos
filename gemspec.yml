@@ -1,0 +1,35 @@
+name: ronin-repos
+summary: Third-party git repository support for ronin.
+description:
+  Provides a repository system for installing, managing, and accessing
+  third-party git repositories, which can contain code or other data.
+
+license: GPL-3.0
+authors: Postmodern
+email: postmodern.mod3@gmail.com
+homepage: https://ronin-rb.dev
+has_yard: true
+
+metadata:
+  documentation_uri: https://rubydoc.info/gems/ronin-repos
+  source_code_uri:   https://github.com/ronin-rb/ronin-repos
+  bug_tracker_uri:   https://github.com/ronin-rb/ronin-repos/issues
+  changelog_uri:     https://github.com/ronin-rb/ronin-repos/blob/main/ChangeLog.md
+  rubygems_mfa_required: 'true'
+
+generated_files:
+ - man/ronin-repos.1
+ - man/ronin-repos-install.1
+ - man/ronin-repos-list.1
+ - man/ronin-repos-remove.1
+ - man/ronin-repos-update.1
+ - man/ronin-repos-purge.1
+
+required_ruby_version: ">= 2.6.0"
+
+# dependencies:
+#   # Library dependencies:
+#   ronin-core: ~> 0.1
+
+development_dependencies:
+  bundler: ~> 2.0
