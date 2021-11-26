@@ -253,9 +253,12 @@ module Ronin
       #   #     "/home/user/.cache/ronin-repos/foo-repo/wordlists/states.txt"]
       #
       def glob(pattern,&block)
-        path = File.join(@path,pattern)
+        path    = File.join(@path,pattern)
+        matches = Dir.glob(path).sort
 
-        return Dir.glob(path,&block)
+        if block then matches.each(&block)
+        else          matches
+        end
       end
 
       #
