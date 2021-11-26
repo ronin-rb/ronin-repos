@@ -186,19 +186,19 @@ describe Ronin::Repos::CacheDir do
     context "when the pattern matches files within all repositories" do
       let(:pattern) { 'dir/*.txt' }
 
-      it "must return the absolute path to the file" do
-        expect(subject.glob(pattern)).to eq(
-          Dir[File.join(cache_dir,'*',pattern)]
-        )
+      let(:expected_paths) do
+        Dir[File.join(cache_dir,'*',pattern)]
+      end
+
+      it "must return the absolute paths that matches the pattern, in order" do
+        expect(subject.glob(pattern)).to eq(expected_paths.sort)
       end
 
       context "when a block is given" do
         it "must yield the matching absolute paths" do
           expect { |b|
             subject.glob(pattern,&b)
-          }.to yield_successive_args(
-            *Dir[File.join(cache_dir,'*',pattern)]
-          )
+          }.to yield_successive_args(*expected_paths.sort)
         end
       end
     end
