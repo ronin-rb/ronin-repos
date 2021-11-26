@@ -229,11 +229,15 @@ module Ronin
       def each_child_directory
         return enum_for(__method__) unless block_given?
 
-        Dir.glob(File.join(@path,'*')) do |path|
+        Dir.children(@path).each do |name|
+          path = File.join(@path,name)
+
           if File.directory?(path)
             yield path
           end
         end
+
+        return nil
       end
 
     end
