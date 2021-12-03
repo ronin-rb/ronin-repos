@@ -16,6 +16,9 @@
 ronin-repos provides a repository system for installing, managing, and accessing
 third-party git repositories, which can contain code or other data.
 
+ronin-repos is part of the [ronin-rb] project, a toolkit for security research
+and development.
+
 ## Features
 
 * Supports installing any [Git][git] repository.
@@ -104,6 +107,8 @@ GNU General Public License for more details.
 
 You should have received a copy of the GNU General Public License
 along with Ronin.  If not, see <https://www.gnu.org/licenses/>.
+
+[ronin-rb]: https://ronin-rb.dev/
 
 [Ruby]: https://www.ruby-lang.org
 [git]: https://git-scm.com/
