@@ -20,6 +20,8 @@
 module Ronin
   module Repos
     # Path to `ronin-repos` root directory.
+    #
+    # @api private
     ROOT = File.expand_path(File.join(__dir__,'..','..','..'))
   end
 end
