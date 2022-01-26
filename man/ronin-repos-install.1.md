@@ -2,7 +2,7 @@
 
 ## SYNOPSIS
 
-`ronin-repos install ` [*options*] *URI*
+`ronin-repos install` [*options*] *URI*
 
 ## DESCRIPTION
 

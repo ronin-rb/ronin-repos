@@ -2,7 +2,7 @@
 
 ## SYNOPSIS
 
-`ronin-repos ` [*options*] [*COMMAND*]
+`ronin-repos` [*options*] [*COMMAND*]
 
 ## DESCRIPTION
 
