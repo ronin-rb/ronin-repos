@@ -1,8 +1,8 @@
 name: ronin-repos
 summary: Third-party git repository support for ronin.
 description:
-  Provides a repository system for installing, managing, and accessing
-  third-party git repositories, which can contain code or other data.
+  ronin-repos provides a repository system for installing, managing, and
+  accessing third-party git repositories, which can contain code or other data.
 
 license: GPL-3.0
 authors: Postmodern
