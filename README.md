@@ -67,7 +67,7 @@ Rnnin::Repos.glob("wordlists/*.txt")
 
 ## Requirements
 
-* [Ruby] >= 2.7.0
+* [Ruby] >= 3.0.0
 * [ronin-core] ~> 0.1
 
 ## Install

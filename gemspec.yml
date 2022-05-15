@@ -25,7 +25,7 @@ generated_files:
  - man/ronin-repos-update.1
  - man/ronin-repos-purge.1
 
-required_ruby_version: ">= 2.7.0"
+required_ruby_version: ">= 3.0.0"
 
 # dependencies:
 #   # Library dependencies:
