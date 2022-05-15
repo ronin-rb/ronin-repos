@@ -4,7 +4,7 @@ description:
   ronin-repos provides a repository system for installing, managing, and
   accessing third-party git repositories, which can contain code or other data.
 
-license: GPL-3.0
+license: LGPL-3.0
 authors: Postmodern
 email: postmodern.mod3@gmail.com
 homepage: https://ronin-rb.dev
