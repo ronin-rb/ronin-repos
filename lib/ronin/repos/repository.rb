@@ -230,6 +230,19 @@ module Ronin
       end
 
       #
+      # Determines if the repository contains the file.
+      #
+      # @param [String] relative_path
+      #   The relative path of the file.
+      #
+      # @return [Boolean]
+      #   Indicates whether the repository contains the file or not.
+      #
+      def has_file?(relative_path)
+        File.file?(join(relative_path))
+      end
+
+      #
       # Finds a file within the repository.
       #
       # @param [String] relative_path
