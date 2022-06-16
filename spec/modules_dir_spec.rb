@@ -2,6 +2,8 @@ require 'spec_helper'
 require 'ronin/repos/modules_dir'
 
 describe Ronin::Repos::ModulesDir do
+  let(:fixtures_dir) { File.expand_path(File.join(__dir__,'fixtures')) }
+
   describe ".repo_modules_dir" do
     context "when a repo_modules_dir has been defined" do
       module TestModulesDir
@@ -84,9 +86,11 @@ describe Ronin::Repos::ModulesDir do
       it "must call Repos.find_file with the .repo_modules_dir and module file name" do
         expect(Ronin::Repos).to receive(:find_file).with(
           File.join(subject.repo_modules_dir,'file.rb')
-        )
+        ).and_return("/path/to/#{subject.repo_modules_dir}/file.rb")
 
-        subject.find_module('file')
+        expect(subject.find_module('file')).to eq(
+          "/path/to/#{subject.repo_modules_dir}/file.rb"
+        )
       end
     end
   end
