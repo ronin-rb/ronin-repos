@@ -283,6 +283,16 @@ describe Ronin::Repos::Repository do
     end
   end
 
+  describe "#join" do
+    let(:relative_path) { 'file1.txt' }
+
+    it "must return the absolute path with respect to the repository" do
+      expect(subject.join(relative_path)).to eq(
+        File.join(path,relative_path)
+      )
+    end
+  end
+
   describe "#find_file" do
     context "when the relative path exists within the repository" do
       let(:relative_path) { 'file1.txt' }

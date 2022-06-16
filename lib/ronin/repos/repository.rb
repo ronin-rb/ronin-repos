@@ -217,6 +217,19 @@ module Ronin
       end
 
       #
+      # Converts a relative path to an absolute path.
+      #
+      # @param [String] relative_path
+      #   The relative path of the file.
+      #
+      # @return [String]
+      #   The absolute path with respect to the repository.
+      #
+      def join(relative_path)
+        File.join(@path,relative_path)
+      end
+
+      #
       # Finds a file within the repository.
       #
       # @param [String] relative_path
@@ -231,7 +244,7 @@ module Ronin
       #   # => "/home/user/.cache/ronin-repos/foo-repo/wordlists/wordlist.txt"
       #
       def find_file(relative_path)
-        path = File.join(@path,relative_path)
+        path = join(relative_path)
 
         if File.file?(path)
           return path
@@ -253,7 +266,7 @@ module Ronin
       #   #     "/home/user/.cache/ronin-repos/foo-repo/wordlists/states.txt"]
       #
       def glob(pattern,&block)
-        path    = File.join(@path,pattern)
+        path    = join(pattern)
         matches = Dir.glob(path).sort
 
         if block then matches.each(&block)
