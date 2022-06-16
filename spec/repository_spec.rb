@@ -387,6 +387,26 @@ describe Ronin::Repos::Repository do
     end
   end
 
+  describe "#list_files" do
+    context "when given no arguments" do
+      it "must list every file within the repository's directory" do
+        expect(subject.list_files).to eq(
+          %w[
+            dir/file1.txt
+            file1.txt
+            file2.txt
+          ]
+        )
+      end
+    end
+
+    context "when given a glob pattern" do
+      it "must list only the files that match the glob pattern" do
+        expect(subject.list_files('dir/*.txt')).to eq(%w[dir/file1.txt])
+      end
+    end
+  end
+
   describe "#to_s" do
     it "must return the repository name" do
       expect(subject.to_s).to eq(name)

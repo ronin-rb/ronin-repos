@@ -301,6 +301,23 @@ module Ronin
       end
 
       #
+      # Lists the paths within the repository.
+      #
+      # @param [String] pattern
+      #   The optional glob pattern to use to list specific files.
+      #
+      # @return [Array<String>]
+      #   The matching paths within the repository.
+      #
+      # @example
+      #   repo.list_files('exploits/{**/}*.rb')
+      #   # => ["exploits/exploit1.rb", "exploits/exploit2.rb"]
+      #
+      def list_files(pattern='{**/}*.*')
+        Dir.glob(pattern, base: @path)
+      end
+
+      #
       # Converts the repository to a String.
       #
       # @return [String]
