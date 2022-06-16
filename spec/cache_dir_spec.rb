@@ -220,6 +220,32 @@ describe Ronin::Repos::CacheDir do
     end
   end
 
+  describe "#list_files" do
+    context "when given no arguments" do
+      it "must list every unique file within each repository" do
+        expect(subject.list_files).to eq(
+          Set.new(
+            %w[
+              dir/file1.txt
+              dir/file2.txt
+              file1.txt
+              file2.txt
+              only-exists-in-repo2.txt
+            ]
+          )
+        )
+      end
+    end
+
+    context "when given a glob pattern" do
+      it "must list only the files that match the glob pattern" do
+        expect(subject.list_files('dir/*.txt')).to eq(
+          Set.new(%w[dir/file1.txt dir/file2.txt])
+        )
+      end
+    end
+  end
+
   describe "#to_s" do
     it "must return the cache directory path" do
       expect(subject.to_s).to eq(cache_dir)

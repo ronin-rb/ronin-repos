@@ -21,6 +21,8 @@ require 'ronin/repos/exceptions'
 require 'ronin/repos/repository'
 require 'ronin/core/home'
 
+require 'set'
+
 module Ronin
   module Repos
     #
@@ -199,6 +201,25 @@ module Ronin
 
         each do |repo|
           repo.glob(pattern,&block)
+        end
+      end
+
+      #
+      # Lists all files across all repos installed in the cache directory.
+      #
+      # @param [String] pattern
+      #   The optional glob pattern to use to list specific files.
+      #
+      # @return [Set<String>]
+      #   The matching paths within the repository.
+      #
+      # @example
+      #   repos.list_files('exploits/{**/}*.rb')
+      #   # => #<Set: {"exploits/exploit1.rb", "exploits/exploit2.rb"}>
+      #
+      def list_files(pattern='{**/}*.*')
+        each_with_object(Set.new) do |repo,files|
+          files.merge(repo.list_files(pattern))
         end
       end
 
