@@ -311,6 +311,24 @@ describe Ronin::Repos::Repository do
     end
   end
 
+  describe "#has_directory?" do
+    context "when the repository contains the directory" do
+      let(:relative_path) { 'dir' }
+
+      it "must return the absolute path to the directory" do
+        expect(subject.has_directory?(relative_path)).to be(true)
+      end
+    end
+
+    context "when the relative path does not exist within the repository" do
+      let(:relative_path) { 'does/not/exist' }
+
+      it "must return false" do
+        expect(subject.has_directory?(relative_path)).to be(false)
+      end
+    end
+  end
+
   describe "#find_file" do
     context "when the relative path exists within the repository" do
       let(:relative_path) { 'file1.txt' }
