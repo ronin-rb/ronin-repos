@@ -219,7 +219,7 @@ module Ronin
       #
       # Finds a file within the repository.
       #
-      # @param [String] path
+      # @param [String] relative_path
       #   The relative path of the file.
       #
       # @return [String, nil]
