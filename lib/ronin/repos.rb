@@ -65,5 +65,18 @@ module Ronin
     def self.glob(pattern,&block)
       @@cache_dir.glob(pattern,&block)
     end
+
+    #
+    # Lists all files across all installed repos.
+    #
+    # @param [String] pattern
+    #   The glob pattern to use to list specific files.
+    #
+    # @return [Set<String>]
+    #   The matching files within all repositories.
+    #
+    def self.list_files(pattern='{**/}*.*')
+      @@cache_dir.list_files(pattern)
+    end
   end
 end

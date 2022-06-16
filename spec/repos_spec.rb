@@ -48,4 +48,20 @@ describe Ronin::Repos do
       expect(subject.glob(pattern)).to be(matches)
     end
   end
+
+  describe ".list_files" do
+    let(:pattern) { 'dir/*.txt' }
+    let(:files) do
+      Set[
+        "dir/file.txt",
+        "dir/file.txt"
+      ]
+    end
+
+    it "must call @@cache_dir.list_files" do
+      expect(cache_dir).to receive(:list_files).with(pattern).and_return(files)
+
+      expect(subject.list_files(pattern)).to be(files)
+    end
+  end
 end
