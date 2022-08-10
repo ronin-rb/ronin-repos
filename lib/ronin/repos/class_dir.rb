@@ -18,14 +18,14 @@
 #
 
 require 'ronin/repos'
-require 'ronin/core/module_registry'
+require 'ronin/core/class_registry'
 
 require 'set'
 
 module Ronin
   module Repos
     #
-    # Adds the ability to load modules from directories within installed
+    # Adds the ability to load classes from directories within installed
     # repositories.
     #
     # ## Example
@@ -33,15 +33,15 @@ module Ronin
     # `lib/ronin/exploits.rb`:
     #
     #     require 'ronin/core/module_registry'
-    #     require 'ronin/repos/modules_dir'
+    #     require 'ronin/repos/class_dir'
     #     
     #     module Ronin
     #       module Exploits
-    #         include Ronin::Core::ModuleRegistry
-    #         include Ronin::Repos::ModulesDir
+    #         include Ronin::Core::ClassRegistry
+    #         include Ronin::Repos::ClassDir
     #     
-    #         modules_dir "#{__dir__}/modules"
-    #         repo_modules_dir "exploits"
+    #         class_dir "#{__dir__}/classes"
+    #         repo_class_dir "exploits"
     #       end
     #     end
     #
@@ -52,7 +52,7 @@ module Ronin
     #         class Exploit
     #     
     #           def self.register(name)
-    #             Exploits.register_module(name,self)
+    #             Exploits.register(name,self)
     #           end
     #     
     #         end
@@ -75,9 +75,9 @@ module Ronin
     #
     # @api semipublic
     #
-    module ModulesDir
+    module ClassDir
       def self.included(namespace)
-        namespace.send :include, Core::ModuleRegistry
+        namespace.send :include, Core::ClassRegistry
         namespace.extend ClassMethods
       end
 
@@ -92,28 +92,28 @@ module Ronin
         #   The repository module directory name.
         # 
         # @raise [NotImplementedError]
-        #   The `repo_modules_dir` method was not defined in the module.
+        #   The `repo_class_dir` method was not defined in the module.
         #
         # @example
-        #   repo_modules_dir "exploits"
+        #   repo_class_dir "exploits"
         #
-        def repo_modules_dir(new_dir=nil)
+        def repo_class_dir(new_dir=nil)
           if new_dir
-            @repo_modules_dir = new_dir
+            @repo_class_dir = new_dir
           else
-            @repo_modules_dir || raise(NotImplementedError,"#{self} did not define a repo_modules_dir")
+            @repo_class_dir || raise(NotImplementedError,"#{self} did not define a repo_class_dir")
           end
         end
 
         #
-        # List the module names within the `module_dir` and within
-        # {#repo_modules_dir} across all installed repositories.
+        # List the module names within the `class_dir` and within
+        # {#repo_class_dir} across all installed repositories.
         #
         # @return [Array<String>]
         # 
-        def list_modules
+        def list_files
           modules = Set.new(super)
-          pattern = File.join(repo_modules_dir,"{**/}*.rb") 
+          pattern = File.join(repo_class_dir,"{**/}*.rb") 
 
           Repos.list_files(pattern).each do |path|
             modules << path.chomp('.rb')
@@ -123,16 +123,16 @@ module Ronin
         end
 
         #
-        # Finds a module within `modules_dir` or within `repo_modules_dir`
+        # Finds a module within `class_dir` or within `repo_class_dir`
         # in one of the installed repositories.
         #
         # @return [String, nil]
         #   The path to the module or `nil` if the module could not be found
-        #   in `modules_dir` or any of the installed repositories.
+        #   in `class_dir` or any of the installed repositories.
         #
-        def find_module(name)
+        def path_for(name)
           super(name) ||
-            Repos.find_file(File.join(repo_modules_dir,"#{name}.rb"))
+            Repos.find_file(File.join(repo_class_dir,"#{name}.rb"))
         end
       end
     end
