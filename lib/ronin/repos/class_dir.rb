@@ -76,6 +76,14 @@ module Ronin
     # @api semipublic
     #
     module ClassDir
+      #
+      # Includes `Ronin::Core::ClassRegistry` and adds {ClassMethods}.
+      #
+      # @param [Module] namespace
+      #   The module that is including {ClassDir}.
+      #
+      # @api private
+      #
       def self.included(namespace)
         namespace.send :include, Core::ClassRegistry
         namespace.extend ClassMethods
@@ -125,6 +133,9 @@ module Ronin
         #
         # Finds a module within `class_dir` or within `repo_class_dir`
         # in one of the installed repositories.
+        #
+        # @param [String] name
+        #   The module name to lookup.
         #
         # @return [String, nil]
         #   The path to the module or `nil` if the module could not be found
