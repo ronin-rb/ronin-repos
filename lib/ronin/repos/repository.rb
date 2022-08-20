@@ -121,6 +121,9 @@ module Ronin
       # @param [Boolean] tag
       #   Controls whether to pull git tags in addition to the git commits.
       #
+      # @param [Hash{Symbol => Object}] kwargs
+      #   Additional keyword arguments for {clone}.
+      #
       # @return [Repository]
       #   The newly cloned repository.
       #
@@ -194,6 +197,15 @@ module Ronin
 
       #
       # Updates the repository.
+      #
+      # @param [String, nil] branch
+      #   The optional git branch to update from.
+      #
+      # @param [String, nil] tag
+      #   The optional git tag to update to.
+      #
+      # @param [Hash{Symbol => Object}] kwargs
+      #   Additional keyword arguments for {#pull}.
       #
       # @return [true]
       #   Indicates that the `git` commands executed successfully.
