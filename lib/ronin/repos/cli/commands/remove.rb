@@ -23,7 +23,25 @@ module Ronin
   module Repos
     class CLI
       module Commands
+        #
+        # Deletes a repository from the cache directory.
+        #
+        # ## Usage
+        #
+        #     ronin-repos remove [options] NAME
+        #
+        # ## Options
+        #
+        #     -C, --cache-dir DIR              Overrides the default cache directory
+        #     -h, --help                       Print help information
+        #
+        # ## Arguments
+        #
+        #     REPO                             URI of the git repository
+        #
         class Remove < Command
+
+          usage '[options] NAME'
 
           argument :name, required: true,
                           usage:    'REPO',
@@ -33,6 +51,12 @@ module Ronin
 
           man_page 'ronin-repos-remove.1'
 
+          #
+          # Runs the `ronin-repos remove` command.
+          #
+          # @param [String] name
+          #   The repository name to remove.
+          #
           def run(name)
             repo = cache_dir[name]
             repo.delete
