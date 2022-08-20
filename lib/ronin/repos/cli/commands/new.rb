@@ -27,16 +27,40 @@ module Ronin
   module Repos
     class CLI
       module Commands
+        #
+        # Creates a new git repository.
+        #
+        # ## Usage
+        #
+        #     ronin-repos new [options] PATH
+        #
+        # ## Options
+        #
+        #     -C, --cache-dir DIR              Overrides the default cache directory
+        #     -h, --help                       Print help information
+        #
+        # ## Arguments
+        #
+        #     PATH                             The path to the new repository
+        #
         class New < Command
 
           include Core::CLI::Generator
 
           template_dir File.join(ROOT,'data','templates','repo')
 
+          usage '[options] PATH'
+
           argument :path, desc: 'The path to the new repository'
 
           description 'Creates a new git repository'
 
+          #
+          # Runs the `ronin-repos new` command.
+          #
+          # @param [String] path
+          #   The path to the new repo directory to create.
+          #
           def run(path)
             @name = File.basename(path)
             @github_user = Core::Git.github_user || ENV['USER']
