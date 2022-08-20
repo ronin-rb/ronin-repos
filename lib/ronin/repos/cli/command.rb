@@ -47,6 +47,9 @@ module Ronin
         #
         # Initializes the command.
         #
+        # @param [Hash{Symbol => Object}] kwargs
+        #   Additional keyword arguments for `initialize`.
+        #
         def initialize(**kwargs)
           super(**kwargs)
 
