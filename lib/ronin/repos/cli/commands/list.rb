@@ -23,6 +23,22 @@ module Ronin
   module Repos
     class CLI
       module Commands
+        #
+        # Lists all repositories in the cache directory.
+        #
+        # ## Usage
+        #
+        #     ronin-repos list [options] [REPO]
+        #
+        # ## Options
+        #
+        #     -C, --cache-dir DIR              Overrides the default cache directory
+        #     -h, --help                       Print help information
+        #
+        # ## Arguments
+        #
+        #     [REPO]                           Optional repository name to list
+        #
         class List < Command
 
           usage '[options] [REPO]'
@@ -35,6 +51,12 @@ module Ronin
 
           man_page 'ronin-repos-list.1'
 
+          #
+          # Runs the `ronin-repos list` command.
+          #
+          # @param [String, nil] name
+          #   The optional repo name to list.
+          #
           def run(name=nil)
             if name
               begin
