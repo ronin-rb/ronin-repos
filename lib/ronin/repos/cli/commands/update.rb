@@ -25,6 +25,22 @@ module Ronin
   module Repos
     class CLI
       module Commands
+        #
+        # Updates all or one repository from the cache directory.
+        #
+        # ## Usage
+        #
+        #    ronin-repos update [options] [REPO]
+        #
+        # ## Options
+        #
+        #     -C, --cache-dir DIR              Overrides the default cache directory
+        #     -h, --help                       Print help information
+        #
+        # ## Arguments
+        #
+        #     [REPO]                           The repository to update
+        #
         class Update < Command
 
           include Core::CLI::Logging
@@ -39,6 +55,12 @@ module Ronin
 
           man_page 'ronin-repos-update.1'
 
+          #
+          # Runs the `ronin-repos update` command.
+          #
+          # @param [String, nil] name
+          #   The optional repository name to update.
+          #
           def run(name=nil)
             if name
               begin
