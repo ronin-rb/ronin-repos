@@ -23,7 +23,25 @@ module Ronin
   module Repos
     class CLI
       module Commands
+        #
+        # Installs a git repository into the cache directory.
+        #
+        # ## Usage
+        #
+        #    ronin-repos install [options] [REPO]
+        #
+        # ## Options
+        #
+        #     -C, --cache-dir DIR              Overrides the default cache directory
+        #     -h, --help                       Print help information
+        #
+        # ## Arguments
+        #
+        #     URI                              URI of the git repository
+        #
         class Install < Command
+
+          usage '[options] URI'
 
           argument :uri, required: true,
                          usage:    'URI',
@@ -33,6 +51,12 @@ module Ronin
 
           man_page 'ronin-repos-install.1'
 
+          #
+          # Runs the `ronin-repos install` command.
+          #
+          # @param [String] uri
+          #   The repository's git URI to install from.
+          #
           def run(uri)
             log_info "Installing repository from #{uri} ..."
             cache_dir.download(uri)
