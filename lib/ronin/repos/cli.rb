@@ -22,6 +22,11 @@ require 'command_kit/commands/auto_load'
 
 module Ronin
   module Repos
+    #
+    # The `ronin-repos` command-line interface (CLI).
+    #
+    # @api private
+    #
     class CLI
 
       include CommandKit::Commands
