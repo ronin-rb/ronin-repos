@@ -72,6 +72,16 @@ describe Ronin::Repos::CacheDir do
         expect(yielded_repos[1]).to be_kind_of(Repository)
         expect(yielded_repos[1].name).to eq("repo2")
       end
+
+      context "when #path does not exist" do
+        subject { described_class.new('/does/not/exist') }
+
+        it "must not yield anything" do
+          expect { |b|
+            subject.each(&b)
+          }.to_not yield_control
+        end
+      end
     end
 
     context "when no block is given" do
@@ -84,6 +94,14 @@ describe Ronin::Repos::CacheDir do
 
         expect(yielded_repos[1]).to be_kind_of(Repository)
         expect(yielded_repos[1].name).to eq("repo2")
+      end
+
+      context "when #path does not exist" do
+        subject { described_class.new('/does/not/exist') }
+
+        it "the Enumerator must not return anything" do
+          expect(subject.each.to_a).to be_empty
+        end
       end
     end
   end
