@@ -15,6 +15,9 @@ Lists all downloaded repositories.
 
 ## OPTIONS
 
+`-h`, `--help`
+  Prints help information.
+
 ## FILES
 
 *~/.cache/ronin-repos*

@@ -15,6 +15,9 @@ Removes a repository.
 
 ## OPTIONS
 
+`-h`, `--help`
+  Prints help information.
+
 ## EXAMPLES
 
 `ronin-repo remove repo`

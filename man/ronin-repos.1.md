@@ -9,6 +9,11 @@
 Allows downloading and managing git repositories. `ronin-repos` can install
 and use any git repository containing Ruby code or other data.
 
+## OPTIONS
+
+`-h`, `--help`
+  Prints help information.
+
 ## FILES
 
 *~/.cache/ronin-repos*

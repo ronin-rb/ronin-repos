@@ -15,6 +15,9 @@ Updates all repositories or just one.
 
 ## OPTIONS
 
+`-h`, `--help`
+  Prints help information.
+
 ## EXAMPLES
 
 `ronin-repos update`

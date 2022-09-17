@@ -10,6 +10,9 @@ Removes all installed repositories.
 
 ## OPTIONS
 
+`-h`, `--help`
+  Prints help information.
+
 ## EXAMPLES
 
 `ronin-repo purge`
