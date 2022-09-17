@@ -15,6 +15,9 @@ Downloads a repository.
 
 ## OPTIONS
 
+`-h`, `--help`
+  Prints help information.
+
 ## FILES
 
 *~/.cache/ronin-repos/*
