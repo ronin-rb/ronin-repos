@@ -27,6 +27,8 @@ module Ronin
 
         man_dir File.join(ROOT,'man')
 
+        bug_report_url 'https://github.com/ronin-rb/ronin-repos/issues/new'
+
         option :cache_dir, short: '-C',
                            value: {
                              type:  String,
