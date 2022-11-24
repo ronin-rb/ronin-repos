@@ -11,7 +11,7 @@ gem 'ronin-core', '~> 0.1', github: "ronin-rb/ronin-core",
                             branch: 'main'
 
 # gem 'command_kit', '~> 0.4', github: 'postmodern/command_kit.rb',
-#                              branch: '0.4.0'
+#                              branch: 'main'
 
 group :development do
   gem 'rake'
