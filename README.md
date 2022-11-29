@@ -23,6 +23,8 @@ and development.
 
 * Supports installing any [Git][git] repository.
 * Manages installed repositories.
+* Has 85% documentation coverage.
+* Has 100% test coverage.
 
 ## Synopsis
 
