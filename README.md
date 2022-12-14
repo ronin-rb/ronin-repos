@@ -30,27 +30,39 @@ and development.
 
 Install a repository:
 
-    $ ronin-repos install https://github.com/...
+```shell
+$ ronin-repos install https://github.com/...
+```
 
 List installed Repositories:
 
-    $ ronin-repos ls
+```shell
+$ ronin-repos ls
+```
 
 Update all installed Repositories:
 
-    $ ronin-repos update
+```shell
+$ ronin-repos update
+```
 
 Update a specific Repositories:
 
-    $ ronin-repos update NAME
+```shell
+$ ronin-repos update NAME
+```
 
 Uninstall a specific Repositories:
 
-    $ ronin-repos rm repo-name
+```shell
+$ ronin-repos rm repo-name
+```
 
 Delete all repositories:
 
-    $ ronin-repos purge
+```shell
+$ ronin-repos purge
+```
 
 ## Examples
 
