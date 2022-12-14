@@ -64,6 +64,12 @@ Delete all repositories:
 $ ronin-repos purge
 ```
 
+Generate your own repo:
+
+```shell
+$ ronin-repos new my-repo
+```
+
 ## Examples
 
 ```ruby
