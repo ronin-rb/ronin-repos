@@ -68,6 +68,8 @@ Generate your own repo:
 
 ```shell
 $ ronin-repos new my-repo
+$ git remote add origin git@github.com:user/my-repo.git
+$ git push -u origin main
 ```
 
 ## Examples
