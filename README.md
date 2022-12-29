@@ -28,6 +28,26 @@ and development.
 
 ## Synopsis
 
+```
+Usage: ronin-repos [options] [COMMAND [ARGS...]]
+
+Options:
+    -h, --help                       Print help information
+
+Arguments:
+    [COMMAND]                        The command name to run
+    [ARGS ...]                       Additional arguments for the command
+
+Commands:
+    help
+    install
+    list, ls
+    new
+    purge
+    remove, rm
+    update, up
+```
+
 Install a repository:
 
 ```shell
