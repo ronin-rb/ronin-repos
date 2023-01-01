@@ -114,11 +114,15 @@ Rnnin::Repos.glob("wordlists/*.txt")
 
 ## Install
 
-    $ gem install ronin-repos
+```shell
+$ gem install ronin-repos
+```
 
 ### Gemfile
 
-    gem 'ronin-repos', '~> 0.1'
+```ruby
+gem 'ronin-repos', '~> 0.1'
+```
 
 ## Development
 
