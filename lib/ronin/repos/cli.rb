@@ -16,8 +16,11 @@
 # along with ronin-repos.  If not, see <https://www.gnu.org/licenses/>.
 #
 
+require 'ronin/repos/version'
+
 require 'command_kit/commands'
 require 'command_kit/commands/auto_load'
+require 'command_kit/options/version'
 
 module Ronin
   module Repos
@@ -33,8 +36,10 @@ module Ronin
         dir:       "#{__dir__}/cli/commands",
         namespace: "#{self}::Commands"
       )
+      include CommandKit::Options::Version
 
       command_name 'ronin-repos'
+      version Ronin::Repos::VERSION
 
       command_aliases['ls'] = 'list'
       command_aliases['up'] = 'update'
