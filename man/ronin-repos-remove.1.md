@@ -1,4 +1,4 @@
-# ronin-repos-remove 1 "2022-01-01" Ronin Repos "User Manuals"
+# ronin-repos-remove 1 "2023-02-01" Ronin Repos "User Manuals"
 
 ## SYNOPSIS
 
