@@ -26,19 +26,19 @@ Updates all repositories or just one.
 `ronin update repo`
 	Updates the specific repository named `repo`.
 
-## FILES
-
-*~/.cache/ronin-repos/*
-	Installation directory for all repositories.
-
 ## ENVIRONMENT
 
-HOME
+*HOME*
 	Specifies the home directory of the user. Ronin will search for the
-	*~/.cache/ronin-repos* cache directory within the home directory.
+	`~/.cache/ronin-repos` cache directory within the home directory.
 
-XDG_CACHE_HOME
-  Specifies the cache directory to use. Defaults to *$HOME/.cache*.
+*XDG_CACHE_HOME*
+  Specifies the cache directory to use. Defaults to `$HOME/.cache`.
+
+## FILES
+
+`~/.cache/ronin-repos/`
+	Installation directory for all repositories.
 
 ## AUTHOR
 

@@ -18,19 +18,19 @@ Lists all downloaded repositories.
 `-h`, `--help`
   Prints help information.
 
-## FILES
-
-*~/.cache/ronin-repos*
-	Installation directory for repositories.
-
 ## ENVIRONMENT
 
-HOME
+*HOME*
 	Specifies the home directory of the user. Ronin will search for the
-	*~/.cache/ronin-repos* cache directory within the home directory.
+	`~/.cache/ronin-repos` cache directory within the home directory.
 
-XDG_CACHE_HOME
-  Specifies the cache directory to use. Defaults to *$HOME/.cache*.
+*XDG_CACHE_HOME*
+  Specifies the cache directory to use. Defaults to `$HOME/.cache`.
+
+## FILES
+
+`~/.cache/ronin-repos`
+	Installation directory for repositories.
 
 ## AUTHOR
 
