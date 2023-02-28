@@ -40,7 +40,7 @@ describe Ronin::Repos::CacheDir do
       it "must return a Repository object with the matching name" do
         repo = subject[name]
 
-        expect(repo).to be_kind_of(Repository)
+        expect(repo).to be_kind_of(Ronin::Repos::Repository)
         expect(repo.name).to eq(name)
       end
     end
@@ -51,7 +51,7 @@ describe Ronin::Repos::CacheDir do
       it do
         expect {
           subject[name]
-        }.to raise_error(RepositoryNotFound,"repository not found: #{name.inspect}")
+        }.to raise_error(Ronin::Repos::RepositoryNotFound,"repository not found: #{name.inspect}")
       end
     end
   end
@@ -66,10 +66,10 @@ describe Ronin::Repos::CacheDir do
         end
 
         expect(yielded_repos.length).to eq(2)
-        expect(yielded_repos[0]).to be_kind_of(Repository)
+        expect(yielded_repos[0]).to be_kind_of(Ronin::Repos::Repository)
         expect(yielded_repos[0].name).to eq("repo1")
 
-        expect(yielded_repos[1]).to be_kind_of(Repository)
+        expect(yielded_repos[1]).to be_kind_of(Ronin::Repos::Repository)
         expect(yielded_repos[1].name).to eq("repo2")
       end
 
@@ -89,10 +89,10 @@ describe Ronin::Repos::CacheDir do
         yielded_repos = subject.each.to_a
 
         expect(yielded_repos.length).to eq(2)
-        expect(yielded_repos[0]).to be_kind_of(Repository)
+        expect(yielded_repos[0]).to be_kind_of(Ronin::Repos::Repository)
         expect(yielded_repos[0].name).to eq("repo1")
 
-        expect(yielded_repos[1]).to be_kind_of(Repository)
+        expect(yielded_repos[1]).to be_kind_of(Ronin::Repos::Repository)
         expect(yielded_repos[1].name).to eq("repo2")
       end
 
@@ -114,11 +114,11 @@ describe Ronin::Repos::CacheDir do
     let(:new_repo) { double('Repository') }
 
     it "must `git clone` the given URI into the cache directory" do
-      expect(Repository).to receive(:system).with(
+      expect(Ronin::Repos::Repository).to receive(:system).with(
         'git', 'clone', uri, path
       ).and_return(true)
 
-      expect(Repository).to receive(:new).and_return(new_repo)
+      expect(Ronin::Repos::Repository).to receive(:new).and_return(new_repo)
 
       expect(subject.install(uri)).to be(new_repo)
     end
@@ -128,11 +128,11 @@ describe Ronin::Repos::CacheDir do
       let(:path)        { File.join(cache_dir,custom_name) }
 
       it "must use the custom name instead of deriving the repository's name" do
-        expect(Repository).to receive(:system).with(
+        expect(Ronin::Repos::Repository).to receive(:system).with(
           'git', 'clone', uri, path
         ).and_return(true)
 
-        expect(Repository).to receive(:new).and_return(new_repo)
+        expect(Ronin::Repos::Repository).to receive(:new).and_return(new_repo)
 
         expect(subject.install(uri,custom_name)).to be(new_repo)
       end
@@ -144,11 +144,11 @@ describe Ronin::Repos::CacheDir do
 
     context "but system() returns nil" do
       it do
-        expect_any_instance_of(Repository).to receive(:system).and_return(nil)
+        expect_any_instance_of(Ronin::Repos::Repository).to receive(:system).and_return(nil)
 
         expect {
           subject.update
-        }.to raise_error(CommandNotInstalled,"git is not installed")
+        }.to raise_error(Ronin::Repos::CommandNotInstalled,"git is not installed")
       end
     end
   end
@@ -157,7 +157,7 @@ describe Ronin::Repos::CacheDir do
     let(:name) { 'repo2' }
 
     it "must call #delete on the Repository" do
-      expect_any_instance_of(Repository).to receive(:delete)
+      expect_any_instance_of(Ronin::Repos::Repository).to receive(:delete)
 
       subject.remove(name)
     end
@@ -168,7 +168,7 @@ describe Ronin::Repos::CacheDir do
       it do
         expect {
           subject.remove(name)
-        }.to raise_error(RepositoryNotFound,"repository not found: #{name.inspect}")
+        }.to raise_error(Ronin::Repos::RepositoryNotFound,"repository not found: #{name.inspect}")
       end
     end
   end

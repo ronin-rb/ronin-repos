@@ -24,7 +24,7 @@ describe Ronin::Repos::Repository do
       it do
         expect {
           described_class.new(path)
-        }.to raise_error(RepositoryNotFound,"repository does not exist: #{path.inspect}")
+        }.to raise_error(Ronin::Repos::RepositoryNotFound,"repository does not exist: #{path.inspect}")
       end
     end
 
@@ -34,7 +34,7 @@ describe Ronin::Repos::Repository do
       it do
         expect {
           described_class.new(path)
-        }.to raise_error(RepositoryNotFound,"path is not a directory: #{path.inspect}")
+        }.to raise_error(Ronin::Repos::RepositoryNotFound,"path is not a directory: #{path.inspect}")
       end
     end
   end
@@ -73,7 +73,7 @@ describe Ronin::Repos::Repository do
 
         expect {
           subject.clone(uri,path)
-        }.to raise_error(CommandNotInstalled,"git is not installed")
+        }.to raise_error(Ronin::Repos::CommandNotInstalled,"git is not installed")
       end
     end
 
@@ -83,7 +83,7 @@ describe Ronin::Repos::Repository do
 
         expect {
           subject.clone(uri,path)
-        }.to raise_error(CommandFailed,"command failed: git clone #{uri} #{path}")
+        }.to raise_error(Ronin::Repos::CommandFailed,"command failed: git clone #{uri} #{path}")
       end
     end
   end
@@ -186,7 +186,7 @@ describe Ronin::Repos::Repository do
 
         expect {
           subject.pull
-        }.to raise_error(CommandNotInstalled,"git is not installed")
+        }.to raise_error(Ronin::Repos::CommandNotInstalled,"git is not installed")
       end
     end
 
@@ -196,7 +196,7 @@ describe Ronin::Repos::Repository do
 
         expect {
           subject.pull
-        }.to raise_error(CommandFailed,"command failed: git pull origin")
+        }.to raise_error(Ronin::Repos::CommandFailed,"command failed: git pull origin")
       end
     end
   end
@@ -218,7 +218,7 @@ describe Ronin::Repos::Repository do
 
         expect {
           subject.checkout(branch)
-        }.to raise_error(CommandNotInstalled,"git is not installed")
+        }.to raise_error(Ronin::Repos::CommandNotInstalled,"git is not installed")
       end
     end
 
@@ -228,7 +228,7 @@ describe Ronin::Repos::Repository do
 
         expect {
           subject.checkout(branch)
-        }.to raise_error(CommandFailed,"command failed: git checkout #{branch}")
+        }.to raise_error(Ronin::Repos::CommandFailed,"command failed: git checkout #{branch}")
       end
     end
   end

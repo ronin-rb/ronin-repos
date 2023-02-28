@@ -12,7 +12,7 @@ describe Ronin::Repos do
     subject { cache_dir }
 
     it "must be a CacheDir pointing to ~/.cache/ronin-repos" do
-      expect(subject).to be_kind_of(CacheDir)
+      expect(subject).to be_kind_of(Ronin::Repos::CacheDir)
       expect(subject.path).to eq(File.expand_path("~/.cache/ronin-repos"))
     end
   end
