@@ -1,0 +1,17 @@
+AllCops:
+  NewCops: enable
+  SuggestExtensions: false
+  TargetRubyVersion: 3.1
+
+inherit_gem:
+  rubocop-ronin: rubocop.yml
+
+#
+# ronin-repos specific exceptions
+#
+
+Lint/EmptyFile:
+  Exclude:
+    - 'spec/fixtures/class_dir/file1.rb'
+    - 'spec/fixtures/class_dir/file2.rb'
+    - 'spec/fixtures/class_dir/only_in_class_dir.rb'
