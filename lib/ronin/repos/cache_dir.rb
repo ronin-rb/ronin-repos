@@ -52,7 +52,7 @@ module Ronin
         @path = path
       end
 
-      # 
+      #
       # Accesses a repository from the cache directory.
       #
       # @param [String] name
@@ -129,10 +129,9 @@ module Ronin
       #
       def update
         each do |repo|
-          begin
-            repo.update
-          rescue CommandFailed
-          end
+          repo.update
+        rescue CommandFailed
+          # ignore any `git` errors when updating
         end
       end
 

@@ -40,7 +40,7 @@ describe Ronin::Repos::Repository do
   end
 
   describe ".clone" do
-    let(:uri)  { 'https://github.com/example/repo.git' }
+    let(:uri) { 'https://github.com/example/repo.git' }
 
     subject { described_class }
 
@@ -89,7 +89,7 @@ describe Ronin::Repos::Repository do
   end
 
   describe ".install" do
-    let(:uri)  { 'https://github.com/example/repo.git' }
+    let(:uri) { 'https://github.com/example/repo.git' }
 
     subject { described_class }
 

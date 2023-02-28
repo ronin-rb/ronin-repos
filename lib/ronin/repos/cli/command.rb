@@ -42,7 +42,6 @@ module Ronin
                              @cache_dir = CacheDir.new(dir)
                            end
 
-
         # The ronin-repos cache directory.
         #
         # @return [CacheDir]

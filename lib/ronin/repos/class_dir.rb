@@ -33,12 +33,12 @@ module Ronin
     #
     #     require 'ronin/core/module_registry'
     #     require 'ronin/repos/class_dir'
-    #     
+    #
     #     module Ronin
     #       module Exploits
     #         include Ronin::Core::ClassRegistry
     #         include Ronin::Repos::ClassDir
-    #     
+    #
     #         class_dir "#{__dir__}/classes"
     #         repo_class_dir "exploits"
     #       end
@@ -49,11 +49,11 @@ module Ronin
     #     module Ronin
     #       module Exploits
     #         class Exploit
-    #     
+    #
     #           def self.register(name)
     #             Exploits.register(name,self)
     #           end
-    #     
+    #
     #         end
     #       end
     #     end
@@ -61,13 +61,13 @@ module Ronin
     # `~/.cache/ronin-repos/repo1/exploits/my_exploit.rb`:
     #
     #     require 'ronin/exploits/exploit'
-    #     
+    #
     #     module Ronin
     #       module Exploits
     #         class MyExploit < Exploit
-    #     
+    #
     #           register 'my_exploit'
-    #     
+    #
     #         end
     #       end
     #     end
@@ -100,7 +100,7 @@ module Ronin
         #
         # @return [String]
         #   The repository module directory name.
-        # 
+        #
         # @raise [NotImplementedError]
         #   The `repo_class_dir` method was not defined in the module.
         #
@@ -120,10 +120,10 @@ module Ronin
         # {#repo_class_dir} across all installed repositories.
         #
         # @return [Array<String>]
-        # 
+        #
         def list_files
           modules = Set.new(super)
-          pattern = File.join(repo_class_dir,"{**/}*.rb") 
+          pattern = File.join(repo_class_dir,"{**/}*.rb")
 
           Repos.list_files(pattern).each do |path|
             modules << path.chomp('.rb')

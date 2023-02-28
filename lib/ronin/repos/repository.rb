@@ -66,7 +66,7 @@ module Ronin
       # Clones a repository.
       #
       # @param [String, URI::HTTPS] uri
-      #   The `https://` or `git@HOST:PATH` SSH URI 
+      #   The `https://` or `git@HOST:PATH` SSH URI
       #
       # @param [String] path
       #   The path to where the repository will be cloned to.
@@ -109,7 +109,7 @@ module Ronin
       # path.
       #
       # @param [String, URI::HTTPS] uri
-      #   The `https://` or `git@HOST:PATH` SSH URI 
+      #   The `https://` or `git@HOST:PATH` SSH URI
       #
       # @param [String] path
       #   The path to where the repository will be cloned to.

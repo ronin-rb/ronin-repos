@@ -63,7 +63,7 @@ module Ronin
           #   The path to the new repo directory to create.
           #
           def run(path)
-            @name = File.basename(path)
+            @name        = File.basename(path)
             @github_user = Core::Git.github_user || ENV['USER']
 
             mkdir path

@@ -25,7 +25,7 @@ module Ronin
   # @api public
   #
   module Repos
-    @@cache_dir = CacheDir.new
+    @cache_dir = CacheDir.new
 
     #
     # Finds the first matching file.
@@ -42,7 +42,7 @@ module Ronin
     #   # => "/home/user/.cache/ronin-repos/foo-repo/wordlists/wordlist.txt"
     #
     def self.find_file(path)
-      @@cache_dir.find_file(path)
+      @cache_dir.find_file(path)
     end
 
     #
@@ -62,7 +62,7 @@ module Ronin
     #   #     "/home/user/.cache/ronin-repos/bar-repo/wordlists/beers.txt"]
     #
     def self.glob(pattern,&block)
-      @@cache_dir.glob(pattern,&block)
+      @cache_dir.glob(pattern,&block)
     end
 
     #
@@ -75,7 +75,7 @@ module Ronin
     #   The matching files within all repositories.
     #
     def self.list_files(pattern='{**/}*.*')
-      @@cache_dir.list_files(pattern)
+      @cache_dir.list_files(pattern)
     end
   end
 end
