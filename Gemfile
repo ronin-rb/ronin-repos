@@ -27,6 +27,6 @@ group :development do
   gem 'yard-spellcheck', require: false
 
   gem 'dead_end',        require: false
-  gem 'sord',            require: false, platforms: :mri
-  gem 'stackprof',       require: false, platforms: :mri
+  gem 'sord',            require: false, platform: :mri
+  gem 'stackprof',       require: false, platform: :mri
 end
