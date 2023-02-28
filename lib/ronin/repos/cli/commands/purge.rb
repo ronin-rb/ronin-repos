@@ -22,12 +22,27 @@ module Ronin
   module Repos
     class CLI
       module Commands
+        #
+        # The `ronin-repos purge` command.
+        #
+        # ## Usage
+        #
+        #     ronin-repos purge [options]
+        #
+        # ## Options
+        #
+        #     -C, --cache-dir DIR              Overrides the default cache directory
+        #     -h, --help                       Print help information
+        #
         class Purge < Command
 
           description 'Removes all git repository from the cache directory'
 
           man_page 'ronin-repos-download.1'
 
+          #
+          # Runs the `ronin-repos purge` command.
+          #
           def run
             cache_dir.purge
           end
