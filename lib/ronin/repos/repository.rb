@@ -304,7 +304,7 @@ module Ronin
       #
       def glob(pattern,&block)
         path    = join(pattern)
-        matches = Dir.glob(path).sort
+        matches = Dir.glob(path)
 
         if block then matches.each(&block)
         else          matches
