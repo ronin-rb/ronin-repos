@@ -88,6 +88,9 @@ module Ronin
         namespace.extend ClassMethods
       end
 
+      #
+      # Class-methods.
+      #
       module ClassMethods
         #
         # Gets or sets the repository module directory name.
