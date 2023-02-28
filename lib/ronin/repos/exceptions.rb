@@ -21,13 +21,13 @@ module Ronin
     class Exception < RuntimeError
     end
 
-    class RepositoryNotFound < Exception
+    class RepositoryNotFound < Repos::Exception
     end
 
-    class CommandNotInstalled < Exception
+    class CommandNotInstalled < Repos::Exception
     end
 
-    class CommandFailed < Exception
+    class CommandFailed < Repos::Exception
     end
   end
 end
