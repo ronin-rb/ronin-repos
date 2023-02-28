@@ -9,7 +9,7 @@ describe Ronin::Repos::CacheDir do
     subject { described_class::PATH }
 
     it "must default to ~/.cache/ronin-repos" do
-      expect(subject).to eq(File.join(ENV['HOME'],'.cache','ronin-repos'))
+      expect(subject).to eq(File.join(Dir.home,'.cache','ronin-repos'))
     end
   end
 
