@@ -34,7 +34,7 @@ module Ronin
 
       include Enumerable
 
-      # The ~/.cache/ronin-repos/ directory where all repos are stored.
+      # The `~/.cache/ronin-repos/` directory where all repos are stored.
       PATH = Core::Home.cache_dir('ronin-repos')
 
       # The path to the cache directory.
