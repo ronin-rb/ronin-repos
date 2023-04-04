@@ -42,7 +42,7 @@ module Ronin
                              @cache_dir = CacheDir.new(dir)
                            end
 
-        # The ronin-repos cache directory.
+        # The `ronin-repos` cache directory.
         #
         # @return [CacheDir]
         attr_reader :cache_dir
