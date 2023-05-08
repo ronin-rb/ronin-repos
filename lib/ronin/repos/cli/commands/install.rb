@@ -62,7 +62,7 @@ module Ronin
           #
           def run(uri)
             log_info "Installing repository from #{uri} ..."
-            cache_dir.download(uri)
+            cache_dir.install(uri)
           rescue CommandFailed => error
             print_error(error.message)
             exit(-1)
