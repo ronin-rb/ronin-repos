@@ -139,6 +139,20 @@ module Ronin
       end
 
       #
+      # The git URL of the repository.
+      #
+      # @return [String]
+      #   The `git:` or `https://` URL for the repository.
+      #
+      # @since 0.2.0
+      #
+      def url
+        Dir.chdir(@path) do
+          `git remote get-url origin`.chomp
+        end
+      end
+
+      #
       # Pulls down new git commits.
       #
       # @param [String] remote

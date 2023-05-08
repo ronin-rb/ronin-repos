@@ -137,6 +137,18 @@ describe Ronin::Repos::Repository do
     end
   end
 
+  describe "#url" do
+    let(:url) { 'https://github.com/example/repo.git' }
+
+    it "must run 'git remote get-url origin' and return the output URL" do
+      expect(subject).to receive(:`).with(
+        'git remote get-url origin'
+      ).and_return("#{url}\n")
+
+      expect(subject.url).to eq(url)
+    end
+  end
+
   describe "#pull" do
     it "must `git pull` from 'origin'" do
       expect(subject).to receive(:system).with(
