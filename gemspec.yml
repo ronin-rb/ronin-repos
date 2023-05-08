@@ -29,6 +29,7 @@ generated_files:
  - man/ronin-repos-list.1
  - man/ronin-repos-new.1
  - man/ronin-repos-remove.1
+ - man/ronin-repos-show.1
  - man/ronin-repos-update.1
  - man/ronin-repos-purge.1
 
