@@ -15,6 +15,9 @@ Generates a new git repository.
 
 ## OPTIONS
 
+`-C`, `--cache-dir` *DIR*
+  Overrides the default cache directory.
+
 `-h`, `--help`
   Prints help information.
 
