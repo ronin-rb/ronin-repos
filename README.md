@@ -56,6 +56,7 @@ Commands:
     new
     purge
     remove, rm
+    show, info
     update, up
 ```
 

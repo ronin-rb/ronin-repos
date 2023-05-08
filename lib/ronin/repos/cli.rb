@@ -41,9 +41,10 @@ module Ronin
       command_name 'ronin-repos'
       version Ronin::Repos::VERSION
 
-      command_aliases['ls'] = 'list'
-      command_aliases['up'] = 'update'
-      command_aliases['rm'] = 'remove'
+      command_aliases['ls']   = 'list'
+      command_aliases['up']   = 'update'
+      command_aliases['rm']   = 'remove'
+      command_aliases['info'] = 'show'
 
     end
   end

@@ -1,17 +1,17 @@
-# ronin-repos-list 1 "2023-02-01" Ronin Repos "User Manuals"
+# ronin-repos-show 1 "2023-02-01" Ronin Repos "User Manuals"
 
 ## SYNOPSIS
 
-`ronin-repos list` [*options*] [*NAME*]
+`ronin-repos show` [*options*] *NAME*
 
 ## DESCRIPTION
 
-Lists all downloaded repositories.
+Prints information about a specific repository in the cache directory.
 
 ## ARGUMENTS
 
 *NAME*
-  The optional repository name to only list.
+  The repository name to print information about.
 
 ## OPTIONS
 
@@ -41,4 +41,4 @@ Postmodern <postmodern.mod3@gmail.com>
 
 ## SEE ALSO
 
-ronin-repos(1) ronin-repos-install(1) ronin-repos-remove(1) ronin-repos-show(1) ronin-repos-update(1) ronin-repos-purge(1)
+ronin-repos(1) ronin-repos-list(1) ronin-repos-install(1) ronin-repos-remove(1) ronin-repos-update(1) ronin-repos-purge(1)
