@@ -18,6 +18,8 @@
 
 require 'ronin/repos/cli/command'
 
+require 'ronin/core/cli/logging'
+
 module Ronin
   module Repos
     class CLI
@@ -39,6 +41,8 @@ module Ronin
         #     URI                              URI of the git repository
         #
         class Install < Command
+
+          include Core::CLI::Logging
 
           usage '[options] URI'
 
