@@ -27,7 +27,7 @@ module Ronin
         #
         # ## Usage
         #
-        #     ronin-repos list [options] [REPO]
+        #     ronin-repos list [options] [NAME]
         #
         # ## Options
         #
@@ -36,15 +36,15 @@ module Ronin
         #
         # ## Arguments
         #
-        #     [REPO]                           Optional repository name to list
+        #     [NAME]                           Optional repository name(s) to list
         #
         class List < Command
 
-          usage '[options] [REPO]'
+          usage '[options] [NAME]'
 
           argument :name, required: false,
-                          usage:    'REPO',
-                          desc:     'Optional repository name to list'
+                          usage:    'NAME',
+                          desc:     'Optional repository name(s) to list'
 
           description 'Lists all repositories in the cache directory'
 
@@ -57,19 +57,16 @@ module Ronin
           #   The optional repo name to list.
           #
           def run(name=nil)
-            if name
-              begin
-                repo = cache_dir[name]
+            repos = if name
+                      cache_dir.select do |repo|
+                        repo.name.include?(name)
+                      end
+                    else
+                      cache_dir.each
+                    end
 
-                puts "  #{repo}"
-              rescue RepositoryNotFound => error
-                print_error(error.message)
-                exit(-1)
-              end
-            else
-              cache_dir.each do |repo|
-                puts "  #{repo}"
-              end
+            repos.each do |repo|
+              puts "  #{repo}"
             end
           end
 

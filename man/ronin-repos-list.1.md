@@ -2,7 +2,7 @@
 
 ## SYNOPSIS
 
-`ronin-repos list` [*options*] [*REPO*]
+`ronin-repos list` [*options*] [*NAME*]
 
 ## DESCRIPTION
 
@@ -10,7 +10,7 @@ Lists all downloaded repositories.
 
 ## ARGUMENTS
 
-*REPO*
+*NAME*
   The optional repository name to only list.
 
 ## OPTIONS
