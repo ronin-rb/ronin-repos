@@ -1,4 +1,6 @@
 require 'spec_helper'
+require 'global_cache_dir_examples'
+
 require 'ronin/repos/class_dir'
 
 describe Ronin::Repos::ClassDir do
@@ -10,14 +12,14 @@ describe Ronin::Repos::ClassDir do
         module WithReposClassDirSet
           include Ronin::Repos::ClassDir
 
-          repo_class_dir "dir"
+          repo_class_dir "classes"
         end
       end
 
       subject { TestClassDir::WithReposClassDirSet }
 
       it "must return the previously set .repo_class_dir" do
-        expect(subject.repo_class_dir).to eq("dir")
+        expect(subject.repo_class_dir).to eq("classes")
       end
     end
 
@@ -44,30 +46,22 @@ describe Ronin::Repos::ClassDir do
       include Ronin::Repos::ClassDir
 
       class_dir "#{__dir__}/fixtures/class_dir"
-      repo_class_dir 'dir'
+      repo_class_dir 'classes'
     end
   end
 
   subject { TestReposDir::ExampleNamespace }
 
-  describe ".list_files" do
-    before do
-      expect(Ronin::Repos).to receive(:list_files).and_return(
-        Set.new(
-          %w[
-            file1.rb
-            file2.rb
-          ]
-        )
-      )
-    end
+  include_examples 'global CacheDir'
 
+  describe ".list_files" do
     it "must list the modules in the .class_dir and in all .repo_class_dir" do
       expect(subject.list_files).to eq(
         %w[
-          file1
-          file2
           only_in_class_dir
+          class1
+          class2
+          namespace/class3
         ]
       )
     end
@@ -84,12 +78,8 @@ describe Ronin::Repos::ClassDir do
 
     context "when the module name exists in one of the installed repos" do
       it "must call Repos.find_file with the .repo_class_dir and module file name" do
-        expect(Ronin::Repos).to receive(:find_file).with(
-          File.join(subject.repo_class_dir,'file.rb')
-        ).and_return("/path/to/#{subject.repo_class_dir}/file.rb")
-
-        expect(subject.path_for('file')).to eq(
-          "/path/to/#{subject.repo_class_dir}/file.rb"
+        expect(subject.path_for('class1')).to eq(
+          "#{cache_dir_path}/repo1/#{subject.repo_class_dir}/class1.rb"
         )
       end
     end

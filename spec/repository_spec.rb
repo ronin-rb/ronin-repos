@@ -392,6 +392,7 @@ describe Ronin::Repos::Repository do
       it "must list every file within the repository's directory" do
         expect(subject.list_files).to eq(
           %w[
+            classes/class1.rb
             dir/file3.txt
             file1.txt
             file2.txt

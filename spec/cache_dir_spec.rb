@@ -244,11 +244,14 @@ describe Ronin::Repos::CacheDir do
         expect(subject.list_files).to eq(
           Set.new(
             %w[
-              dir/file3.txt
-              dir/file4.txt
               file1.txt
               file2.txt
+              dir/file3.txt
+              dir/file4.txt
               only-exists-in-repo2.txt
+              classes/class1.rb
+              classes/class2.rb
+              classes/namespace/class3.rb
             ]
           )
         )
