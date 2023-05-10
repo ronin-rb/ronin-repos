@@ -8,8 +8,8 @@ describe Ronin::Repos do
     expect(subject.const_defined?('VERSION')).to be(true)
   end
 
-  describe "@cache_dir" do
-    subject { described_class.instance_variable_get('@cache_dir') }
+  describe ".cache_dir" do
+    subject { super().cache_dir }
 
     it "must be a CacheDir pointing to ~/.cache/ronin-repos" do
       expect(subject).to be_kind_of(Ronin::Repos::CacheDir)
