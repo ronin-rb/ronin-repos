@@ -392,7 +392,7 @@ describe Ronin::Repos::Repository do
       it "must list every file within the repository's directory" do
         expect(subject.list_files).to eq(
           %w[
-            dir/file1.txt
+            dir/file3.txt
             file1.txt
             file2.txt
           ]
@@ -402,7 +402,7 @@ describe Ronin::Repos::Repository do
 
     context "when given a glob pattern" do
       it "must list only the files that match the glob pattern" do
-        expect(subject.list_files('dir/*.txt')).to eq(%w[dir/file1.txt])
+        expect(subject.list_files('dir/*.txt')).to eq(%w[dir/file3.txt])
       end
     end
   end
