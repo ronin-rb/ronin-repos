@@ -125,8 +125,11 @@ module Ronin
           modules = Set.new(super)
           pattern = File.join(repo_class_dir,"{**/}*.rb")
 
+          # the String#slice range to remove the repo_class_dir/ and .rb ext
+          slice_range = (repo_class_dir.length + 1)...-3
+
           Repos.list_files(pattern).each do |path|
-            modules << path.chomp('.rb')
+            modules << path.slice(slice_range)
           end
 
           return modules.to_a
