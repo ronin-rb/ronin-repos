@@ -129,6 +129,7 @@ module Ronin
           slice_range = (repo_class_dir.length + 1)...-3
 
           Repos.list_files(pattern).each do |path|
+            # NOTE: String#slice is faster than .delete_prefix + delete.suffix
             modules << path.slice(slice_range)
           end
 
