@@ -14,6 +14,26 @@ and use any git repository containing Ruby code or other data.
 `-h`, `--help`
   Prints help information.
 
+## COMMANDS
+
+`install`
+  Installs a 3rd-party git repository.
+
+`list`, `ls`
+  Lists installed git repositories.
+
+`new`
+  Generates a new git repository.
+
+`purge`
+  Deletes all installed git repositories.
+
+`remove`, `rm`
+  Removes a previously installed git repository.
+
+`update`, `up`
+  Updates a previously installed git repository.
+
 ## ENVIRONMENT
 
 *HOME*
