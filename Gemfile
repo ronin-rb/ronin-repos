@@ -9,7 +9,7 @@ platform :jruby do
 end
 
 # Ronin dependencies:
-# gem 'ronin-core', '~> 0.1', github: "ronin-rb/ronin-core",
+# gem 'ronin-core', '~> 0.1', github: 'ronin-rb/ronin-core',
 #                             branch: 'main'
 
 # gem 'command_kit', '~> 0.4', github: 'postmodern/command_kit.rb',
