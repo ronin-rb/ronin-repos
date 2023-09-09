@@ -2,7 +2,13 @@ name: ronin-repos
 summary: Third-party git repository support for ronin.
 description:
   ronin-repos provides a repository system for installing, managing, and
-  accessing third-party git repositories, which can contain code or other data.
+  accessing third-party git repositories, that can contain additional Ruby code 
+  or other data. Other Ronin libraries, such as ronin-exploits or
+  ronin-payloads, can then list and load additional third-party Ruby classes
+  from specific directories within the installed third-party reposs.
+
+  ronin-repos is essentially a decentralized plugin system for Ronin using git
+  repos.
 
 license: LGPL-3.0
 authors: Postmodern

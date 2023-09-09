@@ -14,7 +14,18 @@
 ## Description
 
 ronin-repos provides a repository system for installing, managing, and accessing
-third-party git repositories, which can contain code or other data.
+third-party git repositories, that can contain additional Ruby code or other
+data.
+
+Third-party git repositories can be used to extend parts of Ronin. Other Ronin
+libraries can then list and load additional third-party Ruby classes from
+specific directories within the installed third-party repos:
+
+* `exploits/` - may contain additional exploits for [ronin-exploits].
+* `payloads/` - may contain additional payloads for [ronin-payloads].
+
+**tl;dr** ronin-repos is essentially a decentralized plugin system for Ronin
+using git repos.
 
 ronin-repos is part of the [ronin-rb] project, a toolkit for security research
 and development.
@@ -157,3 +168,5 @@ along with ronin-repos.  If not, see <https://www.gnu.org/licenses/>.
 [Ruby]: https://www.ruby-lang.org
 [git]: https://git-scm.com/
 [ronin-core]: https://github.com/ronin-rb/ronin-core#readme
+[ronin-exploits]: https://github.com/ronin-rb/ronin-exploits#readme
+[ronin-payloads]: https://github.com/ronin-rb/ronin-payloads#readme
