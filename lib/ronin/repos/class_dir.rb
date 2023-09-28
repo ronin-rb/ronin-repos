@@ -122,7 +122,7 @@ module Ronin
         # @return [Array<String>]
         #
         def list_files
-          modules = Set.new(super)
+          paths   = Set.new(super)
           pattern = File.join(repo_class_dir,"{**/}*.rb")
 
           # the String#slice range to remove the repo_class_dir/ and .rb ext
@@ -130,10 +130,10 @@ module Ronin
 
           Repos.list_files(pattern).each do |path|
             # NOTE: String#slice is faster than .delete_prefix + delete.suffix
-            modules << path.slice(slice_range)
+            paths << path.slice(slice_range)
           end
 
-          return modules.to_a
+          return paths.to_a
         end
 
         #
