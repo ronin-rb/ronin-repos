@@ -149,6 +149,19 @@ describe Ronin::Repos::Repository do
     end
   end
 
+  describe "#last_updated_at" do
+    let(:timestamp) { "2023-09-27 20:11:03 -0700" }
+    let(:time)      { Time.parse(timestamp) }
+
+    it "must run 'git log --date=iso8601 --pretty=\"%cd\" -1' and return the parsed timestamp of the last commit" do
+      expect(subject).to receive(:`).with(
+        'git log --date=iso8601 --pretty="%cd" -1'
+      ).and_return("#{timestamp}\n")
+
+      expect(subject.last_updated_at).to eq(time)
+    end
+  end
+
   describe "#pull" do
     it "must `git pull` from 'origin'" do
       expect(subject).to receive(:system).with(

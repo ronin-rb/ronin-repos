@@ -19,6 +19,7 @@
 require 'ronin/repos/exceptions'
 
 require 'fileutils'
+require 'time'
 
 module Ronin
   module Repos
@@ -149,6 +150,20 @@ module Ronin
       def url
         Dir.chdir(@path) do
           `git remote get-url origin`.chomp
+        end
+      end
+
+      #
+      # Determines when the repository was last updated.
+      #
+      # @return [Time]
+      #   The timestamp of the last commit will be returned.
+      #
+      # @since 0.2.0
+      #
+      def last_updated_at
+        Dir.chdir(@path) do
+          Time.parse(`git log --date=iso8601 --pretty="%cd" -1`)
         end
       end
 
