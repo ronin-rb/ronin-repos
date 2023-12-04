@@ -11,29 +11,29 @@ Lists all downloaded repositories.
 ## ARGUMENTS
 
 *NAME*
-  The optional repository name to only list.
+: The optional repository name to only list.
 
 ## OPTIONS
 
 `-C`, `--cache-dir` *DIR*
-  Overrides the default cache directory.
+: Overrides the default cache directory.
 
 `-h`, `--help`
-  Prints help information.
+: Prints help information.
 
 ## ENVIRONMENT
 
 *HOME*
-	Specifies the home directory of the user. Ronin will search for the
-	`~/.cache/ronin-repos` cache directory within the home directory.
+: Specifies the home directory of the user. Ronin will search for the
+  `~/.cache/ronin-repos` cache directory within the home directory.
 
 *XDG_CACHE_HOME*
-  Specifies the cache directory to use. Defaults to `$HOME/.cache`.
+: Specifies the cache directory to use. Defaults to `$HOME/.cache`.
 
 ## FILES
 
 `~/.cache/ronin-repos`
-	Installation directory for repositories.
+: Installation directory for repositories.
 
 ## AUTHOR
 
@@ -41,4 +41,4 @@ Postmodern <postmodern.mod3@gmail.com>
 
 ## SEE ALSO
 
-ronin-repos(1) ronin-repos-install(1) ronin-repos-remove(1) ronin-repos-show(1) ronin-repos-update(1) ronin-repos-purge(1)
+[ronin-repos](ronin-repos.1.md) [ronin-repos-install](ronin-repos-install.1.md) [ronin-repos-remove](ronin-repos-remove.1.md) [ronin-repos-show](ronin-repos-show.1.md) [ronin-repos-update](ronin-repos-update.1.md) [ronin-repos-purge](ronin-repos-purge.1.md)

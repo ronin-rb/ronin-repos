@@ -11,15 +11,15 @@ Generates a new git repository.
 ## ARGUMENTS
 
 *PATH*
-  The path to the new git repository directory.
+: The path to the new git repository directory.
 
 ## OPTIONS
 
 `-C`, `--cache-dir` *DIR*
-  Overrides the default cache directory.
+: Overrides the default cache directory.
 
 `-h`, `--help`
-  Prints help information.
+: Prints help information.
 
 ## AUTHOR
 
@@ -27,4 +27,4 @@ Postmodern <postmodern.mod3@gmail.com>
 
 ## SEE ALSO
 
-ronin-repos(1) ronin-repos-list(1) ronin-repos-install(1) ronin-repos-remove(1) ronin-repos-update(1) ronin-repos-purge(1)
+[ronin-repos](ronin-repos.1.md) [ronin-repos-list](ronin-repos-list.1.md) [ronin-repos-install](ronin-repos-install.1.md) [ronin-repos-remove](ronin-repos-remove.1.md) [ronin-repos-update](ronin-repos-update.1.md) [ronin-repos-purge](ronin-repos-purge.1.md)
