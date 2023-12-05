@@ -1,5 +1,9 @@
 # ronin-repos-update 1 "2023-02-01" Ronin Repos "User Manuals"
 
+## NAME
+
+ronin-repos-update - Updates all or one repository from the cache directory
+
 ## SYNOPSIS
 
 `ronin-repos update` [*options*] [*REPO*]

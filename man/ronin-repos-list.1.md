@@ -1,5 +1,9 @@
 # ronin-repos-list 1 "2023-02-01" Ronin Repos "User Manuals"
 
+## NAME
+
+ronin-repos-list - Lists all repositories in the cache directory
+
 ## SYNOPSIS
 
 `ronin-repos list` [*options*] [*NAME*]

@@ -1,5 +1,9 @@
 # ronin-repos-show 1 "2023-02-01" Ronin Repos "User Manuals"
 
+## NAME
+
+ronin-repos-show - Prints information about a repository in the cache directory
+
 ## SYNOPSIS
 
 `ronin-repos show` [*options*] *NAME*

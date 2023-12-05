@@ -1,5 +1,9 @@
 # ronin-repos-install 1 "2023-02-01" Ronin Repos "User Manuals"
 
+## NAME
+
+ronin-repos-install - Installs a git repository into the cache directory
+
 ## SYNOPSIS
 
 `ronin-repos install` [*options*] *URI*
