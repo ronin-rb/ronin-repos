@@ -1,5 +1,9 @@
 # ronin-repos-new 1 "2023-02-01" Ronin Repos "User Manuals"
 
+## NAME
+
+ronin-repos-new - Creates a new git repository
+
 ## SYNOPSIS
 
 `ronin-repos new` [*options*] *PATH*

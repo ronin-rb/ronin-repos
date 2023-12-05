@@ -1,5 +1,9 @@
 # ronin-repos-purge 1 "2023-02-01" Ronin Repos "User Manuals"
 
+## NAME
+
+ronin-repos-purge - Removes all git repository from the cache directory
+
 ## SYNOPSIS
 
 `ronin-repos purge` [*options*]

@@ -1,5 +1,9 @@
 # ronin-repos-remove 1 "2023-02-01" Ronin Repos "User Manuals"
 
+## NAME
+
+ronin-repos-remove - Deletes a repository from the cache directory
+
 ## SYNOPSIS
 
 `ronin-repos remove` [*options*] *REPO*

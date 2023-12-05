@@ -1,5 +1,9 @@
 # ronin-repos 1 "2023-02-01" Ronin Repos "User Manuals"
 
+## NAME
+
+ronin-repos - manages third-party git repository for ronin.
+
 ## SYNOPSIS
 
 `ronin-repos` [*options*] [*COMMAND*]
