@@ -24,6 +24,7 @@ metadata:
   rubygems_mfa_required: 'true'
 
 generated_files:
+ - data/completions/ronin-repos
  - man/ronin-repos.1
  - man/ronin-repos-install.1
  - man/ronin-repos-list.1
