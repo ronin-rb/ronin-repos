@@ -26,6 +26,7 @@ metadata:
 generated_files:
  - data/completions/ronin-repos
  - man/ronin-repos.1
+ - man/ronin-repos-completion.1
  - man/ronin-repos-install.1
  - man/ronin-repos-list.1
  - man/ronin-repos-new.1
