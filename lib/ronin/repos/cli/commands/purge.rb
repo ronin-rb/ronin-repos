@@ -38,7 +38,7 @@ module Ronin
 
           description 'Removes all git repository from the cache directory'
 
-          man_page 'ronin-repos-download.1'
+          man_page 'ronin-repos-purge.1'
 
           #
           # Runs the `ronin-repos purge` command.
