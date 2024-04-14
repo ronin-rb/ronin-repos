@@ -54,7 +54,7 @@ module Ronin
 
           description 'Creates a new git repository'
 
-          man_page 'ronin-repos.1'
+          man_page 'ronin-repos-new.1'
 
           #
           # Runs the `ronin-repos new` command.
