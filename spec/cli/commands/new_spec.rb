@@ -38,9 +38,9 @@ describe Ronin::Repos::CLI::Commands::New do
     end
 
     it "must make an initial git commit" do
-      expect(`git -C "#{@path}" log --pretty=oneline`).to match(
-        /[0-9a-f]{40} Initial commit./
-      )
+      git_log = Dir.chdir(@path) { `git log --pretty=oneline` }
+
+      expect(git_log).to match(/[0-9a-f]{40} Initial commit./)
     end
 
     it "must create a README.md file within the directory" do
