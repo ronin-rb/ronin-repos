@@ -67,6 +67,8 @@ module Ronin
             @github_user = Core::Git.github_user || ENV['USER']
 
             mkdir path
+            mkdir File.join(path,'exploits')
+            mkdir File.join(path,'payloads')
             erb 'README.md.erb', File.join(path,'README.md')
 
             Dir.chdir(path) do
