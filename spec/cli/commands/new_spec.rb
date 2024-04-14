@@ -13,7 +13,18 @@ describe Ronin::Repos::CLI::Commands::New do
       @name = 'new-repo'
       @path = File.join(@root,@name)
 
+      @git_name    = `git config --global user.name`
+      @git_email   = `git config --global user.email`
       @github_user = Ronin::Core::Git.github_user || ENV['USER']
+
+      if @git_name.empty?
+        # ensure that we set the git author name and email in the CI
+        @git_name    = 'Test User'
+        @git_email   = 'test@example.com'
+
+        system('git','config','--global','user.name',@git_name)
+        system('git','config','--global','user.email',@git_email)
+      end
 
       described_class.main(@path)
     end
