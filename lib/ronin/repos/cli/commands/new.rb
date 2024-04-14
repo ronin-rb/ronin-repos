@@ -69,6 +69,8 @@ module Ronin
             mkdir path
             mkdir File.join(path,'exploits')
             mkdir File.join(path,'payloads')
+            mkdir File.join(path,'recon')
+            mkdir File.join(path,'brute')
             erb 'README.md.erb', File.join(path,'README.md')
 
             Dir.chdir(path) do

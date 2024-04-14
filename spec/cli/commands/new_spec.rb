@@ -41,6 +41,14 @@ describe Ronin::Repos::CLI::Commands::New do
       expect(File.directory?(File.join(@path,'payloads'))).to be(true)
     end
 
+    it "must create the recon/ directory within the repo directory" do
+      expect(File.directory?(File.join(@path,'recon'))).to be(true)
+    end
+
+    it "must create the brute/ directory within the repo directory" do
+      expect(File.directory?(File.join(@path,'brute'))).to be(true)
+    end
+
     it "must create a git repository within the directory" do
       expect(File.directory?(File.join(@path,'.git'))).to be(true)
     end
