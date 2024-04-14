@@ -15,3 +15,7 @@ Lint/EmptyFile:
     - 'spec/fixtures/class_dir/file1.rb'
     - 'spec/fixtures/class_dir/file2.rb'
     - 'spec/fixtures/class_dir/only_in_class_dir.rb'
+
+Style/MapIntoArray:
+  Exclude:
+    - 'spec/cache_dir_spec.rb'
