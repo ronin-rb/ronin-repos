@@ -77,7 +77,7 @@ module Ronin
 
                 begin
                   repo.update
-                rescue CommandFailed => error
+                rescue CommandNotInstalled, CommandFailed => error
                   log_error("failed to update repository #{repo}: #{error.message}")
                 end
               end
