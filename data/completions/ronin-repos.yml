@@ -1,0 +1,13 @@
+---
+ronin-repos remove:
+  - $(ronin-repos list)
+ronin-repos rm:
+  - $(ronin-repos list)
+ronin-repos show:
+  - $(ronin-repos list)
+ronin-repos info:
+  - $(ronin-repos list)
+ronin-repos update:
+  - $(ronin-repos list)
+ronin-repos up:
+  - $(ronin-repos list)

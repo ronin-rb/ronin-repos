@@ -37,5 +37,6 @@ require 'command_kit/completion/task'
 CommandKit::Completion::Task.new(
   class_file:  'ronin/repos/cli',
   class_name:  'Ronin::Repos::CLI',
+  input_file:  'data/completions/ronin-repos.yml',
   output_file: 'data/completions/ronin-repos'
 )
