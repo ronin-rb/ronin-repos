@@ -19,6 +19,6 @@
 module Ronin
   module Repos
     # ronin-repos version
-    VERSION = '0.2.0'
+    VERSION = '0.2.0.rc1'
   end
 end
