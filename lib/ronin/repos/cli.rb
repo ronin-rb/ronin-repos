@@ -17,6 +17,7 @@
 #
 
 require 'ronin/repos/version'
+require 'ronin/core/cli/help/banner'
 
 require 'command_kit/commands'
 require 'command_kit/commands/auto_load'
@@ -37,6 +38,7 @@ module Ronin
         namespace: "#{self}::Commands"
       )
       include CommandKit::Options::Version
+      include Core::CLI::Help::Banner
 
       command_name 'ronin-repos'
       version Ronin::Repos::VERSION
