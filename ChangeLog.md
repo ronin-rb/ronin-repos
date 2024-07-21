@@ -1,4 +1,4 @@
-### 0.2.0 / 2024-XX-XX
+### 0.2.0 / 2024-07-22
 
 * Added {Ronin::Repos::Repository#url}.
 * Added {Ronin::Repos::Repository#last_updated_at}.
