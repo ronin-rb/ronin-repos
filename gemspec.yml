@@ -39,7 +39,7 @@ required_ruby_version: ">= 3.0.0"
 
 dependencies:
   # Library dependencies:
-  ronin-core: ~> 0.2.0.rc1
+  ronin-core: ~> 0.2
 
 development_dependencies:
   bundler: ~> 2.0
