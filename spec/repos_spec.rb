@@ -48,7 +48,6 @@ describe Ronin::Repos do
       expect(subject.list_files("dir/*.txt")).to eq(
         Set[
           "dir/file3.txt",
-          "dir/file3.txt",
           "dir/file4.txt"
         ]
       )
