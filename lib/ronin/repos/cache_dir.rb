@@ -16,10 +16,10 @@
 # along with ronin-repos.  If not, see <https://www.gnu.org/licenses/>.
 #
 
-require 'ronin/repos/exceptions'
-require 'ronin/repos/repository'
-require 'ronin/core/home'
+require_relative 'exceptions'
+require_relative 'repository'
 
+require 'ronin/core/home'
 require 'set'
 
 module Ronin

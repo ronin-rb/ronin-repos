@@ -16,8 +16,8 @@
 # along with ronin-repos.  If not, see <https://www.gnu.org/licenses/>.
 #
 
-require 'ronin/repos/root'
-require 'ronin/repos/cache_dir'
+require_relative '../root'
+require_relative '../cache_dir'
 
 require 'ronin/core/cli/command'
 

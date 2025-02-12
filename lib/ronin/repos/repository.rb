@@ -16,7 +16,7 @@
 # along with ronin-repos.  If not, see <https://www.gnu.org/licenses/>.
 #
 
-require 'ronin/repos/exceptions'
+require_relative 'exceptions'
 
 require 'fileutils'
 require 'time'

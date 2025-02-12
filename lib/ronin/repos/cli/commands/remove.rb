@@ -16,7 +16,7 @@
 # along with ronin-repos.  If not, see <https://www.gnu.org/licenses/>.
 #
 
-require 'ronin/repos/cli/command'
+require_relative '../command'
 
 module Ronin
   module Repos

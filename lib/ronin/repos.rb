@@ -16,7 +16,7 @@
 # along with ronin-repos.  If not, see <https://www.gnu.org/licenses/>.
 #
 
-require 'ronin/repos/cache_dir'
+require_relative 'repos/cache_dir'
 
 module Ronin
   #

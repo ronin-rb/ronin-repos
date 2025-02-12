@@ -16,8 +16,8 @@
 # along with ronin-repos.  If not, see <https://www.gnu.org/licenses/>.
 #
 
-require 'ronin/repos/cli/command'
-require 'ronin/repos/root'
+require_relative '../command'
+require_relative '../../root'
 
 require 'ronin/core/cli/generator'
 require 'ronin/core/git'
